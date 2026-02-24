@@ -1,0 +1,172 @@
+# ============================================================================
+# StudyFlow - Apache Rewrite Rules
+# Student Self-Teaching App
+#
+# Handles clean URL routing, static asset serving, and security restrictions.
+# Requires mod_rewrite enabled on Apache.
+# ============================================================================
+
+# Enable the rewrite engine
+RewriteEngine On
+
+# --------------------------------------------------------------------------
+# Security: Deny direct access to sensitive directories and files
+# --------------------------------------------------------------------------
+
+# Block access to the data/ directory (JSON file storage)
+RewriteRule ^data(/.*)?$ - [F,L]
+
+# Block access to config files directly
+RewriteRule ^config(/.*)?$ - [F,L]
+
+# Block access to core PHP classes directly
+RewriteRule ^core(/.*)?$ - [F,L]
+
+# Block access to service classes directly
+RewriteRule ^services(/.*)?$ - [F,L]
+
+# Block access to utility classes directly
+RewriteRule ^utils(/.*)?$ - [F,L]
+
+# Block access to controller classes directly
+RewriteRule ^controllers(/.*)?$ - [F,L]
+
+# Block access to test files
+RewriteRule ^tests(/.*)?$ - [F,L]
+
+# Block access to hidden files and directories (e.g., .git, .env)
+RewriteRule (^\.|/\.) - [F,L]
+
+# Block access to composer files, package files, and other dev artifacts
+RewriteRule ^(composer\.(json|lock)|package\.json|package-lock\.json)$ - [F,L]
+
+# Block access to markdown and text documentation files
+RewriteRule ^(README\.md|CHANGELOG\.md|LICENSE)$ - [F,L]
+
+# --------------------------------------------------------------------------
+# Security Headers
+# --------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Enable XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Static Assets: Serve directly without routing through index.php
+# --------------------------------------------------------------------------
+
+# If the request is for an existing file, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map|webp|mp4|mp3|pdf)$ - [L]
+
+# If the request is for an existing directory with an index file, serve it
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# --------------------------------------------------------------------------
+# Asset Caching
+# --------------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images: cache for 1 month
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS and JavaScript: cache for 1 week
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+
+    # Fonts: cache for 1 month
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Compression
+# --------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Front Controller: Route all non-static requests to index.php
+# --------------------------------------------------------------------------
+
+# Don't rewrite requests for existing files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything else to the front controller
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# --------------------------------------------------------------------------
+# Error Documents
+# --------------------------------------------------------------------------
+
+ErrorDocument 403 /index.php?error=403
+ErrorDocument 404 /index.php?error=404
+ErrorDocument 500 /index.php?error=500
+
+# --------------------------------------------------------------------------
+# PHP Settings (if allowed by hosting)
+# --------------------------------------------------------------------------
+
+<IfModule mod_php.c>
+    # Hide PHP version
+    php_flag expose_php Off
+
+    # Upload limits
+    php_value upload_max_filesize 10M
+    php_value post_max_size 12M
+
+    # Session security
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+    php_value session.cookie_samesite Lax
+
+    # Error handling (disable display in production)
+    php_flag display_errors Off
+    php_flag log_errors On
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Prevent directory listing
+# --------------------------------------------------------------------------
+
+Options -Indexes
+
+# --------------------------------------------------------------------------
+# Character encoding
+# --------------------------------------------------------------------------
+
+AddDefaultCharset UTF-8
