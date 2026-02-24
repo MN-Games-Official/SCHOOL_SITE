@@ -94,72 +94,35 @@ $navItems = [
     </div>
 
     <!-- Navigation Links -->
+    <?php
+        $navActiveClass   = 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-l-3 border-primary-500';
+        $navInactiveClass = 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-gray-200 border-l-3 border-transparent';
+
+        $navSections = [
+            ['title' => 'Learn',    'items' => array_slice($navItems, 0, 3), 'pt' => 'pt-2'],
+            ['title' => 'Practice', 'items' => array_slice($navItems, 3, 5), 'pt' => 'pt-4'],
+            ['title' => 'Track',    'items' => array_slice($navItems, 8),    'pt' => 'pt-4'],
+        ];
+    ?>
     <nav class="flex-1 overflow-y-auto custom-scrollbar px-3 py-3 space-y-0.5" aria-label="Main navigation">
 
-        <!-- Section: Learn -->
-        <p class="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
-            Learn
-        </p>
+        <?php foreach ($navSections as $section): ?>
+            <p class="px-3 <?= $section['pt'] ?> pb-1 text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                <?= e($section['title']) ?>
+            </p>
 
-        <?php foreach (array_slice($navItems, 0, 3) as $item): ?>
-            <?php
-                $isActive = isset($_view) ? $_view->isActive($item['pattern']) : false;
-                $activeClasses   = 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-l-3 border-primary-500';
-                $inactiveClasses = 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-gray-200 border-l-3 border-transparent';
-            ?>
-            <a href="<?= url($item['url']) ?>"
-               class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 <?= $isActive ? $activeClasses : $inactiveClasses ?>"
-               aria-current="<?= $isActive ? 'page' : 'false' ?>">
-                <span class="text-base w-6 text-center shrink-0"><?= $item['icon'] ?></span>
-                <span class="truncate"><?= e($item['label']) ?></span>
-                <?php if ($isActive): ?>
-                    <span class="ml-auto w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
-                <?php endif; ?>
-            </a>
-        <?php endforeach; ?>
-
-        <!-- Section: Practice -->
-        <p class="px-3 pt-4 pb-1 text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
-            Practice
-        </p>
-
-        <?php foreach (array_slice($navItems, 3, 5) as $item): ?>
-            <?php
-                $isActive = isset($_view) ? $_view->isActive($item['pattern']) : false;
-                $activeClasses   = 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-l-3 border-primary-500';
-                $inactiveClasses = 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-gray-200 border-l-3 border-transparent';
-            ?>
-            <a href="<?= url($item['url']) ?>"
-               class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 <?= $isActive ? $activeClasses : $inactiveClasses ?>"
-               aria-current="<?= $isActive ? 'page' : 'false' ?>">
-                <span class="text-base w-6 text-center shrink-0"><?= $item['icon'] ?></span>
-                <span class="truncate"><?= e($item['label']) ?></span>
-                <?php if ($isActive): ?>
-                    <span class="ml-auto w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
-                <?php endif; ?>
-            </a>
-        <?php endforeach; ?>
-
-        <!-- Section: Track -->
-        <p class="px-3 pt-4 pb-1 text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
-            Track
-        </p>
-
-        <?php foreach (array_slice($navItems, 8) as $item): ?>
-            <?php
-                $isActive = isset($_view) ? $_view->isActive($item['pattern']) : false;
-                $activeClasses   = 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-l-3 border-primary-500';
-                $inactiveClasses = 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-gray-200 border-l-3 border-transparent';
-            ?>
-            <a href="<?= url($item['url']) ?>"
-               class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 <?= $isActive ? $activeClasses : $inactiveClasses ?>"
-               aria-current="<?= $isActive ? 'page' : 'false' ?>">
-                <span class="text-base w-6 text-center shrink-0"><?= $item['icon'] ?></span>
-                <span class="truncate"><?= e($item['label']) ?></span>
-                <?php if ($isActive): ?>
-                    <span class="ml-auto w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
-                <?php endif; ?>
-            </a>
+            <?php foreach ($section['items'] as $item): ?>
+                <?php $isActive = isset($_view) ? $_view->isActive($item['pattern']) : false; ?>
+                <a href="<?= url($item['url']) ?>"
+                   class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 <?= $isActive ? $navActiveClass : $navInactiveClass ?>"
+                   aria-current="<?= $isActive ? 'page' : 'false' ?>">
+                    <span class="text-base w-6 text-center shrink-0"><?= $item['icon'] ?></span>
+                    <span class="truncate"><?= e($item['label']) ?></span>
+                    <?php if ($isActive): ?>
+                        <span class="ml-auto w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
+                    <?php endif; ?>
+                </a>
+            <?php endforeach; ?>
         <?php endforeach; ?>
 
     </nav>
