@@ -468,10 +468,12 @@ class UserService
         $currentXP    = ($user['xp'] ?? 0) + $amount;
         $currentLevel = $user['level'] ?? 1;
 
-        // Calculate new level
-        while ($currentXP >= $currentLevel * self::XP_PER_LEVEL) {
-            $currentXP -= $currentLevel * self::XP_PER_LEVEL;
+        // Calculate new level (cap at 1000 to prevent runaway loops)
+        $xpNeeded = $currentLevel * self::XP_PER_LEVEL;
+        while ($xpNeeded > 0 && $currentXP >= $xpNeeded && $currentLevel < 1000) {
+            $currentXP -= $xpNeeded;
             $currentLevel++;
+            $xpNeeded = $currentLevel * self::XP_PER_LEVEL;
         }
 
         $this->storage->update(self::COLLECTION_USERS, $userId, [

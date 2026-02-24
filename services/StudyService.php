@@ -591,8 +591,10 @@ class StudyService
         $current = 1;
 
         for ($i = 1, $n = count($dates); $i < $n; $i++) {
-            $diff = (strtotime($dates[$i]) - strtotime($dates[$i - 1])) / 86400;
-            if (abs($diff - 1) < 0.001) {
+            $dayA = date('Y-m-d', strtotime($dates[$i - 1]));
+            $dayB = date('Y-m-d', strtotime($dates[$i]));
+            $nextDay = date('Y-m-d', strtotime($dayA . ' +1 day'));
+            if ($dayB === $nextDay) {
                 $current++;
                 $longest = max($longest, $current);
             } else {
