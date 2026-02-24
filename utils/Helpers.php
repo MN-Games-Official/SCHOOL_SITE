@@ -331,8 +331,11 @@ function generate_color(string $seed, int $s = 65, int $l = 55): string
  */
 function calculate_reading_time(string $text, int $wpm = 200): int
 {
+    if ($wpm <= 0) {
+        $wpm = 200;
+    }
     $wordCount = str_word_count(strip_tags($text));
-    $minutes   = (int) ceil($wordCount / max($wpm, 1));
+    $minutes   = (int) ceil($wordCount / $wpm);
     return max($minutes, 1);
 }
 

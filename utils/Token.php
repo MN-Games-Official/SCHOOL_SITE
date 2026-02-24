@@ -329,7 +329,8 @@ class Token
      */
     private static function base64UrlDecode(string $data): string|false
     {
-        $padded = str_pad($data, strlen($data) % 4, '=');
+        $remainder = strlen($data) % 4;
+        $padded = $remainder ? str_pad($data, strlen($data) + (4 - $remainder), '=') : $data;
         return base64_decode(strtr($padded, '-_', '+/'), true);
     }
 
