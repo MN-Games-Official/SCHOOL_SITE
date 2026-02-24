@@ -1,0 +1,229 @@
+{
+    "subjects": [
+        {
+            "id": "math",
+            "name": "Mathematics",
+            "icon": "📐",
+            "color": "blue",
+            "category": "core",
+            "description": "Algebra, Geometry, Calculus, Statistics, and more",
+            "topics_count": 12
+        },
+        {
+            "id": "science",
+            "name": "Science",
+            "icon": "🔬",
+            "color": "green",
+            "category": "core",
+            "description": "Physics, Chemistry, Biology, and Earth Science",
+            "topics_count": 10
+        },
+        {
+            "id": "english",
+            "name": "English",
+            "icon": "📖",
+            "color": "red",
+            "category": "core",
+            "description": "Grammar, Literature, Vocabulary, and Comprehension",
+            "topics_count": 8
+        },
+        {
+            "id": "history",
+            "name": "History",
+            "icon": "🏛️",
+            "color": "amber",
+            "category": "core",
+            "description": "World History, Civilizations, and Historical Events",
+            "topics_count": 9
+        },
+        {
+            "id": "geography",
+            "name": "Geography",
+            "icon": "🌍",
+            "color": "teal",
+            "category": "core",
+            "description": "Physical Geography, Human Geography, and Maps",
+            "topics_count": 6
+        },
+        {
+            "id": "computer_science",
+            "name": "Computer Science",
+            "icon": "💻",
+            "color": "indigo",
+            "category": "core",
+            "description": "Programming, Algorithms, Data Structures, and Web Development",
+            "topics_count": 10
+        },
+        {
+            "id": "art",
+            "name": "Art",
+            "icon": "🎨",
+            "color": "pink",
+            "category": "core",
+            "description": "Visual Arts, Art History, Techniques, and Design",
+            "topics_count": 6
+        },
+        {
+            "id": "music",
+            "name": "Music",
+            "icon": "🎵",
+            "color": "purple",
+            "category": "core",
+            "description": "Music Theory, Instruments, Composition, and History",
+            "topics_count": 6
+        },
+        {
+            "id": "physical_education",
+            "name": "Physical Education",
+            "icon": "⚽",
+            "color": "orange",
+            "category": "core",
+            "description": "Health, Fitness, Sports Science, and Nutrition",
+            "topics_count": 5
+        },
+        {
+            "id": "foreign_languages",
+            "name": "Foreign Languages",
+            "icon": "🗣️",
+            "color": "cyan",
+            "category": "core",
+            "description": "Spanish, French, German, Mandarin, and more",
+            "topics_count": 7
+        },
+        {
+            "id": "act",
+            "name": "ACT Prep",
+            "icon": "🎯",
+            "color": "violet",
+            "category": "test_prep",
+            "description": "Full ACT preparation: English, Math, Reading, Science, Writing",
+            "topics_count": 8
+        },
+        {
+            "id": "sat",
+            "name": "SAT Prep",
+            "icon": "📋",
+            "color": "indigo",
+            "category": "test_prep",
+            "description": "SAT preparation: Reading, Writing & Language, Math (Calculator & No-Calculator)",
+            "topics_count": 7
+        },
+        {
+            "id": "ap_biology",
+            "name": "AP Biology",
+            "icon": "🧬",
+            "color": "green",
+            "category": "ap",
+            "description": "Advanced Placement Biology: Evolution, Ecology, Genetics, Cell Biology",
+            "topics_count": 8
+        },
+        {
+            "id": "ap_chemistry",
+            "name": "AP Chemistry",
+            "icon": "⚗️",
+            "color": "emerald",
+            "category": "ap",
+            "description": "Advanced Placement Chemistry: Atomic Structure, Bonding, Reactions, Thermodynamics",
+            "topics_count": 9
+        },
+        {
+            "id": "ap_physics",
+            "name": "AP Physics",
+            "icon": "⚛️",
+            "color": "blue",
+            "category": "ap",
+            "description": "AP Physics 1 & 2: Mechanics, Electricity, Waves, Thermodynamics",
+            "topics_count": 10
+        },
+        {
+            "id": "ap_calculus",
+            "name": "AP Calculus AB/BC",
+            "icon": "∫",
+            "color": "sky",
+            "category": "ap",
+            "description": "Limits, Derivatives, Integrals, Series, and Applications",
+            "topics_count": 8
+        },
+        {
+            "id": "ap_us_history",
+            "name": "AP US History",
+            "icon": "🇺🇸",
+            "color": "red",
+            "category": "ap",
+            "description": "American history from pre-Columbian era to present",
+            "topics_count": 9
+        },
+        {
+            "id": "ap_world_history",
+            "name": "AP World History",
+            "icon": "🌎",
+            "color": "amber",
+            "category": "ap",
+            "description": "Global history from 1200 CE to present",
+            "topics_count": 9
+        },
+        {
+            "id": "ap_english_lang",
+            "name": "AP English Language",
+            "icon": "📝",
+            "color": "rose",
+            "category": "ap",
+            "description": "Rhetoric, argumentation, synthesis, and composition",
+            "topics_count": 6
+        },
+        {
+            "id": "ap_english_lit",
+            "name": "AP English Literature",
+            "icon": "📚",
+            "color": "fuchsia",
+            "category": "ap",
+            "description": "Literary analysis, poetry, prose, and drama",
+            "topics_count": 7
+        },
+        {
+            "id": "ap_cs_a",
+            "name": "AP Computer Science A",
+            "icon": "☕",
+            "color": "orange",
+            "category": "ap",
+            "description": "Java programming, OOP, data structures, and algorithms",
+            "topics_count": 8
+        },
+        {
+            "id": "ap_cs_principles",
+            "name": "AP CS Principles",
+            "icon": "🖥️",
+            "color": "teal",
+            "category": "ap",
+            "description": "Computing concepts, internet, data, algorithms, and impact",
+            "topics_count": 7
+        },
+        {
+            "id": "ap_statistics",
+            "name": "AP Statistics",
+            "icon": "📊",
+            "color": "cyan",
+            "category": "ap",
+            "description": "Exploring data, sampling, probability, and inference",
+            "topics_count": 7
+        },
+        {
+            "id": "ap_psychology",
+            "name": "AP Psychology",
+            "icon": "🧠",
+            "color": "purple",
+            "category": "ap",
+            "description": "Behavior, cognition, development, disorders, and therapy",
+            "topics_count": 9
+        },
+        {
+            "id": "ap_environmental_science",
+            "name": "AP Environmental Science",
+            "icon": "🌱",
+            "color": "lime",
+            "category": "ap",
+            "description": "Ecosystems, biodiversity, pollution, energy, and sustainability",
+            "topics_count": 7
+        }
+    ]
+}

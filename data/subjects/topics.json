@@ -1,0 +1,97 @@
+{
+    "topics": {
+        "math": [
+            {"id": "algebra", "name": "Algebra", "description": "Variables, equations, inequalities, and functions", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "geometry", "name": "Geometry", "description": "Shapes, angles, proofs, area, and volume", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "trigonometry", "name": "Trigonometry", "description": "Trig functions, identities, and applications", "difficulty": "advanced", "estimated_hours": 15},
+            {"id": "precalculus", "name": "Pre-Calculus", "description": "Functions, limits, sequences, and series", "difficulty": "advanced", "estimated_hours": 20},
+            {"id": "calculus", "name": "Calculus", "description": "Derivatives, integrals, and applications", "difficulty": "expert", "estimated_hours": 30},
+            {"id": "statistics", "name": "Statistics & Probability", "description": "Data analysis, distributions, and inference", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "linear_algebra", "name": "Linear Algebra", "description": "Matrices, vectors, and transformations", "difficulty": "advanced", "estimated_hours": 20},
+            {"id": "number_theory", "name": "Number Theory", "description": "Primes, divisibility, and modular arithmetic", "difficulty": "advanced", "estimated_hours": 12}
+        ],
+        "science": [
+            {"id": "physics_mechanics", "name": "Physics: Mechanics", "description": "Motion, forces, energy, and momentum", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "physics_em", "name": "Physics: Electricity & Magnetism", "description": "Circuits, fields, and electromagnetic waves", "difficulty": "advanced", "estimated_hours": 18},
+            {"id": "chemistry_general", "name": "General Chemistry", "description": "Atoms, bonding, reactions, and stoichiometry", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "organic_chemistry", "name": "Organic Chemistry", "description": "Carbon compounds, reactions, and mechanisms", "difficulty": "advanced", "estimated_hours": 25},
+            {"id": "biology_cell", "name": "Cell Biology", "description": "Cell structure, function, and division", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "biology_genetics", "name": "Genetics", "description": "DNA, heredity, gene expression, and biotechnology", "difficulty": "advanced", "estimated_hours": 18},
+            {"id": "ecology", "name": "Ecology", "description": "Ecosystems, populations, and biodiversity", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "earth_science", "name": "Earth Science", "description": "Geology, meteorology, and oceanography", "difficulty": "beginner", "estimated_hours": 15}
+        ],
+        "english": [
+            {"id": "grammar", "name": "Grammar & Mechanics", "description": "Parts of speech, sentence structure, and punctuation", "difficulty": "beginner", "estimated_hours": 10},
+            {"id": "vocabulary", "name": "Vocabulary Building", "description": "Word roots, context clues, and SAT/ACT words", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "reading_comp", "name": "Reading Comprehension", "description": "Main idea, inference, and critical analysis", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "essay_writing", "name": "Essay Writing", "description": "Thesis development, organization, and style", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "literature", "name": "Literature Analysis", "description": "Poetry, prose, drama, and literary devices", "difficulty": "advanced", "estimated_hours": 20},
+            {"id": "rhetoric", "name": "Rhetoric & Argumentation", "description": "Persuasion techniques and logical reasoning", "difficulty": "advanced", "estimated_hours": 12}
+        ],
+        "history": [
+            {"id": "ancient_civ", "name": "Ancient Civilizations", "description": "Mesopotamia, Egypt, Greece, and Rome", "difficulty": "beginner", "estimated_hours": 15},
+            {"id": "medieval", "name": "Medieval Period", "description": "Feudalism, Crusades, and the Renaissance", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "us_history", "name": "US History", "description": "Colonial era through modern America", "difficulty": "intermediate", "estimated_hours": 25},
+            {"id": "world_wars", "name": "World Wars", "description": "WWI, WWII, causes, events, and aftermath", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "cold_war", "name": "Cold War Era", "description": "Superpower rivalry, proxy wars, and fall of USSR", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "modern_world", "name": "Modern World", "description": "Globalization, terrorism, and contemporary issues", "difficulty": "advanced", "estimated_hours": 10}
+        ],
+        "act": [
+            {"id": "act_english", "name": "ACT English", "description": "Grammar, usage, mechanics, and rhetorical skills", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "act_math", "name": "ACT Mathematics", "description": "Pre-algebra through trigonometry", "difficulty": "intermediate", "estimated_hours": 25},
+            {"id": "act_reading", "name": "ACT Reading", "description": "Prose fiction, social science, humanities, and natural science passages", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "act_science", "name": "ACT Science", "description": "Data representation, research summaries, and conflicting viewpoints", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "act_writing", "name": "ACT Writing (Optional)", "description": "Essay writing and argumentation", "difficulty": "advanced", "estimated_hours": 10},
+            {"id": "act_strategies", "name": "ACT Test Strategies", "description": "Time management, guessing strategies, and test-day tips", "difficulty": "beginner", "estimated_hours": 5},
+            {"id": "act_practice", "name": "ACT Practice Tests", "description": "Full-length practice tests and score analysis", "difficulty": "intermediate", "estimated_hours": 30}
+        ],
+        "sat": [
+            {"id": "sat_reading", "name": "SAT Reading", "description": "Evidence-based reading: literature, history, science passages", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "sat_writing", "name": "SAT Writing & Language", "description": "Grammar, expression of ideas, and standard English conventions", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "sat_math_no_calc", "name": "SAT Math (No Calculator)", "description": "Algebra, problem solving, and data analysis without calculator", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "sat_math_calc", "name": "SAT Math (Calculator)", "description": "Advanced math, modeling, and complex problem solving", "difficulty": "intermediate", "estimated_hours": 20},
+            {"id": "sat_essay", "name": "SAT Essay (Optional)", "description": "Analytical writing and source analysis", "difficulty": "advanced", "estimated_hours": 10},
+            {"id": "sat_strategies", "name": "SAT Test Strategies", "description": "Pacing, elimination techniques, and score improvement", "difficulty": "beginner", "estimated_hours": 5},
+            {"id": "sat_practice", "name": "SAT Practice Tests", "description": "Full-length practice tests with detailed explanations", "difficulty": "intermediate", "estimated_hours": 30}
+        ],
+        "ap_biology": [
+            {"id": "evolution", "name": "Evolution", "description": "Natural selection, speciation, and evidence for evolution", "difficulty": "advanced", "estimated_hours": 15},
+            {"id": "cell_processes", "name": "Cellular Processes", "description": "Metabolism, photosynthesis, and cellular respiration", "difficulty": "advanced", "estimated_hours": 18},
+            {"id": "genetics_heredity", "name": "Genetics & Heredity", "description": "Mendelian genetics, gene regulation, and biotechnology", "difficulty": "advanced", "estimated_hours": 20},
+            {"id": "ecology_ap", "name": "Ecology", "description": "Population dynamics, communities, and ecosystems", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "ap_bio_labs", "name": "AP Biology Labs", "description": "Required lab investigations and analysis", "difficulty": "advanced", "estimated_hours": 15}
+        ],
+        "ap_chemistry": [
+            {"id": "atomic_structure", "name": "Atomic Structure", "description": "Electron configuration, periodicity, and atomic models", "difficulty": "advanced", "estimated_hours": 12},
+            {"id": "chemical_bonding", "name": "Chemical Bonding", "description": "Ionic, covalent, metallic bonds, and molecular geometry", "difficulty": "advanced", "estimated_hours": 15},
+            {"id": "reactions_stoich", "name": "Reactions & Stoichiometry", "description": "Types of reactions, balancing, and calculations", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "thermodynamics_ap", "name": "Thermodynamics", "description": "Enthalpy, entropy, free energy, and Hess's law", "difficulty": "expert", "estimated_hours": 15},
+            {"id": "kinetics", "name": "Chemical Kinetics", "description": "Reaction rates, mechanisms, and catalysis", "difficulty": "advanced", "estimated_hours": 12},
+            {"id": "equilibrium", "name": "Equilibrium", "description": "Le Chatelier's principle, Kc, Kp, and acid-base equilibrium", "difficulty": "expert", "estimated_hours": 15}
+        ],
+        "ap_calculus": [
+            {"id": "limits_continuity", "name": "Limits & Continuity", "description": "Limit definitions, properties, and continuity theorems", "difficulty": "advanced", "estimated_hours": 12},
+            {"id": "derivatives", "name": "Derivatives", "description": "Definition, rules, chain rule, and implicit differentiation", "difficulty": "advanced", "estimated_hours": 18},
+            {"id": "applications_deriv", "name": "Applications of Derivatives", "description": "Optimization, related rates, and curve sketching", "difficulty": "expert", "estimated_hours": 15},
+            {"id": "integrals", "name": "Integrals", "description": "Definite and indefinite integrals, FTC, and techniques", "difficulty": "advanced", "estimated_hours": 20},
+            {"id": "applications_int", "name": "Applications of Integrals", "description": "Area, volume, and accumulation functions", "difficulty": "expert", "estimated_hours": 15},
+            {"id": "series_bc", "name": "Series (BC Only)", "description": "Taylor series, power series, and convergence tests", "difficulty": "expert", "estimated_hours": 18}
+        ],
+        "ap_us_history": [
+            {"id": "period1_2", "name": "Periods 1-2 (1491-1754)", "description": "Exploration, colonization, and colonial society", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "period3", "name": "Period 3 (1754-1800)", "description": "Revolution, Constitution, and early republic", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "period4_5", "name": "Periods 4-5 (1800-1877)", "description": "Expansion, reform, Civil War, and Reconstruction", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "period6_7", "name": "Periods 6-7 (1865-1945)", "description": "Industrialization, imperialism, and world wars", "difficulty": "intermediate", "estimated_hours": 18},
+            {"id": "period8_9", "name": "Periods 8-9 (1945-Present)", "description": "Cold War, civil rights, and modern America", "difficulty": "intermediate", "estimated_hours": 15},
+            {"id": "apush_dbq", "name": "Document-Based Questions", "description": "DBQ strategies and practice", "difficulty": "advanced", "estimated_hours": 10}
+        ],
+        "ap_psychology": [
+            {"id": "bio_bases", "name": "Biological Bases of Behavior", "description": "Brain structure, neurons, and neurotransmitters", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "sensation_perception", "name": "Sensation & Perception", "description": "Sensory systems, attention, and perceptual organization", "difficulty": "intermediate", "estimated_hours": 10},
+            {"id": "learning_memory", "name": "Learning & Memory", "description": "Classical conditioning, operant conditioning, and memory processes", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "cognition", "name": "Cognition", "description": "Thinking, problem solving, language, and intelligence", "difficulty": "advanced", "estimated_hours": 12},
+            {"id": "development", "name": "Developmental Psychology", "description": "Lifespan development from prenatal to aging", "difficulty": "intermediate", "estimated_hours": 12},
+            {"id": "abnormal_psych", "name": "Abnormal Psychology", "description": "Psychological disorders and treatment approaches", "difficulty": "advanced", "estimated_hours": 15}
+        ]
+    }
+}
